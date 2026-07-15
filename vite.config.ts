@@ -1,8 +1,8 @@
 import { defineConfig } from "vite";
 import preact from "@preact/preset-vite";
 import type {UserConfig} from "vite";
+import tsconfigPaths from "vite-tsconfig-paths";
 
-// @ts-expect-error process is a nodejs global
 const host = process.env.TAURI_DEV_HOST;
 
 /**
@@ -31,7 +31,7 @@ const tauriOptions = {
 } satisfies UserConfig;
 
 // https://vite.dev/config/
-export default defineConfig(async () => ({
-  plugins: [preact()],
-    ...tauriOptions,
-}));
+export default defineConfig({
+  plugins: [preact(), tsconfigPaths()],
+  ...tauriOptions,
+});
