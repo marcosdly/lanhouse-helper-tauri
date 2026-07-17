@@ -1,3 +1,6 @@
 [submodule "vendor/granite"]
 	path = vendor/granite
 	url = https://github.com/elementary/granite.git
+[submodule "vendor/vcpkg/vcpkg"]
+	path = vendor/vcpkg/vcpkg
+	url = https://github.com/microsoft/vcpkg.git
